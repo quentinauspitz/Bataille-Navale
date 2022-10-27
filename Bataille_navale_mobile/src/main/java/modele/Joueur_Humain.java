@@ -10,5 +10,5 @@ package modele;
  */
 
 public class Joueur_Humain {
-    
+    int hello 3 ;
 }
