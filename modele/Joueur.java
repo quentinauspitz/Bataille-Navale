@@ -11,4 +11,5 @@ package modele;
 public class Joueur {
     int shoot = 0;
     int st = 0;
+    int ste = 2;
 }
