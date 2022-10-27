@@ -6,8 +6,9 @@ package modele;
 
 /**
  *
- * @author Quentin
+ * @author Quentin Auspitz
  */
-public class Joueur_Machine {
+
+public class Joueur_Humain {
     
 }

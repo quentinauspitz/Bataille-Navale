@@ -6,10 +6,9 @@ package modele;
 
 /**
  *
- * @author Quentin
+ * @author Quentin Auspitz
  */
-public class Joueur {
-    int shoot = 0;
-    int st = 0;
-    int ste = 2;
+
+public class Joueur_Machine {
+    
 }
