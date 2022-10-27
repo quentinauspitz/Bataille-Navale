@@ -9,5 +9,6 @@ package modele;
  * @author Quentin
  */
 public class Joueur {
-    
+    int shoot = 0;
+    int st = 0;
 }
