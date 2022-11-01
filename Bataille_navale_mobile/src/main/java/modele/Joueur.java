@@ -4,92 +4,82 @@
  */
 package modele;
 
+import java.util.List;
+import java.util.Vector;
+
 /**
- *
  * @author Quentin Auspitz
  */
 
-public abstract class Joueur{
-    public final static int TOUCHE=1;
-    public final static int COULE=2;
-    public final static int A_L_EAU=3;
-    private Joueur adversaire;
-    private GrilleNavale grille;
-    private String nom;
-    
-    /// Constructeur
-    public Joueur(GrilleNavale g, String nom){
-        this.grille = g;
-        this.nom = nom;
+public abstract class Joueur implements Serializable {
+    protected PlateauModele plateauModele;
+
+    /*
+     * Recense les cases et leur type :
+     *  - 0 pour une case qu'on a pas encore visee
+     *  - 1 pour une case qui a ete visee et ne contenait pas de bateau
+     *  - 2 pour une case qui a ete visee et qui contenait un bateau
+     *  - 3 pour une case d'un bateau coule
+     */
+    protected int[][] grilleTir;
+
+    public Joueur (int x, int y){
+        plateauModele = new PlateauModele(x, y);
+        grilleTir = new int[x][y];
+        for (int i = 0; i<x; i++)
+            for (int j = 0; j<y; j++)
+                grilleTir[i][j]=0;
     }
-	
-	/// Methodes
-    public GrilleNavale getGrille(){
-        return(this.grille);
+
+    /*
+     * Interroge le modele pour savoir si le tir en (x,y) a touche
+     */
+    public int toucher(int x, int y){
+        return plateauModele.toucher(x, y);
     }
-	
-    public GrilleNavale getGrilleAdversaire(){
-        return(adversaire.grille);
+
+    abstract public Vector<Integer> tirer();
+
+    public int getSizeX (){
+        return plateauModele.getSizeX();
     }
-	
-    public String getNom(){
-        return(this.nom);
+
+    public int getSizeY (){
+        return plateauModele.getSizeY();
     }
-		
-    public void jouerAvec(Joueur j){  // Constructeur de l'adversaire
-        this.adversaire = j;
-        j.adversaire = this;
+
+    public List<Bateau> getListeBateaux () {
+        return plateauModele.getListeBateaux();
     }
-	
-    public boolean defense(Coordonnee c){
-        int etat = 0;
-        this.grille.recoitTir(c);  // tir pris en compte sur la grille de this
-        if(this.grille.perdu()){  // vérifier que ça appelle bien navure.estTouche/Coule(c) > GrilleNavale.perdu()
-            this.perdu();
-            this.adversaire.gagne();
-            return false;
-        }
-        
-        if(this.grille.estTouche(c)){
-            if(this.grille.estCoule(c))
-                etat = COULE;
-            else
-                etat = TOUCHE;
-        }
-        
-        else
-            etat = A_L_EAU;
-        this.retourDefense(c, etat);
-        adversaire.retourAttaque(c, etat);
-        return true;
+
+    /*
+     * Verifie que l'on puisse viser la case grilleTir[x][y]
+     */
+    public boolean tirEstValide (int x, int y){
+        return grilleTir[x][y]==0;
     }
-	
-    public void attaque(Coordonnee c){
-        if (adversaire.defense(c)){
-            adversaire.debutAttaque();
-        }
+
+
+    /*
+     * Met a jour le type de la case grilleTir[x][y]
+     */
+    public void invaliderCase (int x, int y, int type){
+        grilleTir[x][y]=type;
     }
-    
-    protected String resultatAttaque(int etat){
-        String resultatAttaque = "";
-        switch(etat){
-            case 1 : resultatAttaque = " touche un navire adverse !"; break;
-            case 2 : resultatAttaque = " coule un navire adverse !"; break;
-            case 3 : resultatAttaque = " tombe à l'eau !"; break;
-        }
-        
-        return resultatAttaque;
+
+    public boolean perdu () {
+        return plateauModele.perdu();
     }
-    
-    /// Methodes abstraites
-    protected abstract void perdu();	// invoqué lorsque this a perdu la partie. Agit sur l'interface.
-    protected abstract void gagne();	// invoqué lorsque this a gagné la partie. Agit sur l'interface.
-    protected abstract void retourAttaque(Coordonnee c, int etat);	// donne le droit d'attaquer à l'autre.
-    protected abstract void retourDefense(Coordonnee c, int etat);	// donne le droit de défendre à l'autre.
-    
-    public abstract void debutAttaque();
-    public static void main(String[] args){
-        // TODO Auto-generated method stub
+
+    public Bateau getBateau(int x, int y) {
+        return plateauModele.getBateau(x,y);
+    }
+
+    /*
+     * Renvoie le type de la case grilleTir[x][y]
+     */
+    public int getTirType(int i, int j) {
+        return grilleTir[i][j];
     }
 }
 
