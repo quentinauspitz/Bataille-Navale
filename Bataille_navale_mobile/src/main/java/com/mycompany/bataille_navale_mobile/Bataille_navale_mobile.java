@@ -9,6 +9,7 @@ package com.mycompany.bataille_navale_mobile;
  *
  * @author Quentin
  */
+
 public class Bataille_navale_mobile {
 
     public static void main(String[] args) {
