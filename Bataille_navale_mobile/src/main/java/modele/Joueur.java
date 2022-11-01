@@ -43,7 +43,7 @@ public abstract class Joueur{
 	
     public boolean defense(Coordonnee c){
         int etat = 0;
-        this.grille.recoitTir(c);  // tir c pris en compte sur la grille de this
+        this.grille.recoitTir(c);  // tir pris en compte sur la grille de this
         if(this.grille.perdu()){  // vérifier que ça appelle bien navure.estTouche/Coule(c) > GrilleNavale.perdu()
             this.perdu();
             this.adversaire.gagne();
@@ -75,7 +75,7 @@ public abstract class Joueur{
         switch(etat){
             case 1 : resultatAttaque = " touche un navire adverse !"; break;
             case 2 : resultatAttaque = " coule un navire adverse !"; break;
-            case 3 : resultatAttaque = " tombe � l'eau !"; break;
+            case 3 : resultatAttaque = " tombe à l'eau !"; break;
         }
         
         return resultatAttaque;
