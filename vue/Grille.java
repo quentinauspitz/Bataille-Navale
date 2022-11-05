@@ -1,3 +1,4 @@
+package vue;
 public class Grille {
     int[][] plateau;
 
@@ -43,3 +44,4 @@ public boolean posBateau(int[][] plateau, int type, boolean horizontal, int coor
     }else{
         return false;
     }
+
