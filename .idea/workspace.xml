@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e36ecf0-a5cb-465b-b1f4-aea39319e6ce" name="Changes" comment="commit gloria class grille 2">
+    <list default="true" id="7e36ecf0-a5cb-465b-b1f4-aea39319e6ce" name="Changes" comment="commit gloria class grille 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue/Grille.java" beforeDir="false" afterPath="$PROJECT_DIR$/vue/Grille.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +83,7 @@
       <updated>1666857748134</updated>
       <workItem from="1666857771758" duration="2982000" />
       <workItem from="1667503538436" duration="1389000" />
-      <workItem from="1667682416764" duration="617000" />
+      <workItem from="1667682416764" duration="1754000" />
     </task>
     <task id="LOCAL-00001" summary="first commit gloria">
       <created>1666876480013</created>
@@ -112,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667682837155</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit gloria class grille 3">
+      <created>1667683093565</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667683093566</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +142,7 @@
     <MESSAGE value="first commit gloria" />
     <MESSAGE value="commit gloria class grille 1" />
     <MESSAGE value="commit gloria class grille 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit gloria class grille 2" />
+    <MESSAGE value="commit gloria class grille 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit gloria class grille 3" />
   </component>
 </project>
