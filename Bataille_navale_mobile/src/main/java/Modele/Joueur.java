@@ -4,7 +4,6 @@
  */
 package Modele;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +11,7 @@ import java.util.List;
  * @author Quentin Auspitz
  */
 
-public abstract class Joueur implements Serializable {
+public abstract class Joueur {
 
     protected plateauModele plateauModele;
 

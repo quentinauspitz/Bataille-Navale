@@ -5,38 +5,80 @@
 package Modele;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- *
  * @author Quentin Auspitz
  */
 
-public class Joueur_Humain extends Joueur {
+public abstract class Joueur_Humain {
 
-    public Joueur_Humain(int x, int y) {
-        super(x, y);
-        // TODO Auto-generated constructor stub
+    protected plateauModele plateauModele;
+
+    /*
+     * Recense les cases et leur type :
+     * - 0 pour une case qu'on a pas encore visee
+     * - 1 pour une case qui a ete visee et ne contenait pas de bateau
+     * - 2 pour une case qui a ete visee et qui contenait un bateau
+     * - 3 pour une case d'un bateau coule
+     */
+    protected int[][] grilleTir;
+
+    protected Joueur_Humain(int x, int y) {
+        plateauModele = new plateauModele(x, y);
+        grilleTir = new int[x][y];
+        for (int i = 0; i < x; i++)
+            for (int j = 0; j < y; j++)
+                grilleTir[i][j] = 0;
     }
 
     /*
-     * La fonction tirer de l'humain n'est pas utilisee car c'est la detection du
-     * click
-     * qui declenche le tir.
+     * Interroge le modele pour savoir si le tir en (x,y) a touche
      */
-    @Override
-    public ArrayList<Integer> tirer() {
-        return new ArrayList<>();
+    public int toucher(int x, int y) {
+        return plateauModele.toucher(x, y);
+    }
+
+    abstract public ArrayList<Integer> tirer();
+
+    public int getSizeX() {
+        return plateauModele.getSizeX();
+    }
+
+    public int getSizeY() {
+        return plateauModele.getSizeY();
+    }
+
+    public List<Bateau> getListeBateaux() {
+        return plateauModele.getListeBateaux();
     }
 
     /*
-     * Ajoute un bateau au modele du joueur
+     * Verifie que l'on puisse viser la case grilleTir[x][y]
      */
-    public void poser(int x, int y, int direction, int type) {
-        plateauModele.poser(x, y, direction, type);
+    public boolean tirEstValide(int x, int y) {
+        return grilleTir[x][y] == 0;
     }
 
-    public void remove(int x, int y) {
-        plateauModele.supprimerBateau(x, y);
+    /*
+     * Met a jour le type de la case grilleTir[x][y]
+     */
+    public void invaliderCase(int x, int y, int type) {
+        grilleTir[x][y] = type;
     }
 
+    public boolean perdu() {
+        return plateauModele.perdu();
+    }
+
+    public Bateau getBateau(int x, int y) {
+        return plateauModele.getBateau(x, y);
+    }
+
+    /*
+     * Renvoie le type de la case grilleTir[x][y]
+     */
+    public int getTirType(int i, int j) {
+        return grilleTir[i][j];
+    }
 }
