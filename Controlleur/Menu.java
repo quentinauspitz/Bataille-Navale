@@ -76,10 +76,7 @@ public class Menu
         System.out.println("===============");
         System.out.println("BATAILLE NAVALE");
         System.out.println("===============");
-        System.out.println("\nVersion :\t2.0");
-        System.out.println("\nAuteur : \tZufferey Matthieu\n\n");
-        System.out.println("\nCopyright 2000 Zufferey Matthieu\n\n\n\n\n\n\n\n");
-                     
+
         System.exit(0) ;                   
         
 		}
