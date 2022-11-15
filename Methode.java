@@ -4,19 +4,20 @@
  Auteur				: Zufferey Matthieu, 1hc	
  Version			: 2.0		
  Date				: 10 mars 2002			
- Description		: Ce sont les méthodes utilisées pour la bataille navale
- Préconditions		: Aucune
+ Description		: Ce sont les mï¿½thodes utilisï¿½es pour la bataille navale
+ Prï¿½conditions		: Aucune
  
 ********************************************************************************************/
 
 import javax.swing.* ;
 import java.io.* ;
 
+//test glo
 public class Methode
 	{
 	public int Coordonnee(int a) throws IOException //1.longeur, 2.hauteur
 		{
-		//Gère l'entrée en longueur ou en hauteur des bateaux
+		//Gï¿½re l'entrï¿½e en longueur ou en hauteur des bateaux
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)) ;
 		
 		boolean erreur ;
@@ -47,7 +48,7 @@ public class Methode
 
 		}
 		
-	public int Ligne(int a) throws IOException // ligne de départ
+	public int Ligne(int a) throws IOException // ligne de dï¿½part
 		{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)) ;
 		
@@ -77,7 +78,7 @@ public class Methode
 		return a ;
 		}
 		
-	public int Colonne(int a) throws IOException // colonne de départ
+	public int Colonne(int a) throws IOException // colonne de dï¿½part
 		{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)) ;
 		
@@ -138,7 +139,7 @@ public class Methode
 		}
 		
 			
-	public void SecondPrint(String a [][], String b [][]) // Affiche les deux grilles, cotes à cotes
+	public void SecondPrint(String a [][], String b [][]) // Affiche les deux grilles, cotes ï¿½ cotes
 		{	
 		for (int i = 0 ; i < 11 ; i++)
 			{
@@ -424,7 +425,7 @@ public class Methode
 		int [] tabBat3a = new int[6] ;
 		int [] tabBat3b = new int[6] ;
 		int [] tabBat2 = new int[4] ;
-		//Choix des coordonnées pour le bateau à 5 cases	
+		//Choix des coordonnï¿½es pour le bateau ï¿½ 5 cases	
 		
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre bateau a 5 cases\n") ;
@@ -433,7 +434,7 @@ public class Methode
 			
 		fonction.Bateau(grille, 5) ;
 		
-		//Choix des coordonnées pour le bateau à 4 cases
+		//Choix des coordonnï¿½es pour le bateau ï¿½ 4 cases
 					
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre bateau a 4 cases\n") ;
@@ -442,7 +443,7 @@ public class Methode
 		
 		fonction.Bateau(grille, 4) ;
 		
-		//Choix des coordonnées pour le premier bateau à 3 cases			
+		//Choix des coordonnï¿½es pour le premier bateau ï¿½ 3 cases			
 
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre 1er bateau a 3 cases\n") ;
@@ -451,7 +452,7 @@ public class Methode
 		
 		fonction.Bateau(grille, 3) ;
 
-		//Choix des coordonnées pour le deuxième bateau à 3 cases
+		//Choix des coordonnï¿½es pour le deuxiï¿½me bateau ï¿½ 3 cases
 		
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre 2 eme bateau a 3 cases\n") ;
@@ -460,7 +461,7 @@ public class Methode
 
 		fonction.Bateau(grille, 3) ;
 
-		//Choix des coordonnées pour le bateau à 2 cases
+		//Choix des coordonnï¿½es pour le bateau ï¿½ 2 cases
 
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre bateau a 2 cases\n") ;
@@ -478,15 +479,15 @@ public class Methode
 		
 		Methode fonction = new Methode() ;
 		
-		//Choix des coordonnées pour le bateau à 5 cases	
+		//Choix des coordonnï¿½es pour le bateau ï¿½ 5 cases	
 		fonction.BateauOrdi(grilleOrdi, 5) ;
-		//Choix des coordonnées pour le bateau à 4 cases	
+		//Choix des coordonnï¿½es pour le bateau ï¿½ 4 cases	
 		fonction.BateauOrdi(grilleOrdi, 4) ;
-		//Choix des coordonnées pour le premier bateau à 3 cases	
+		//Choix des coordonnï¿½es pour le premier bateau ï¿½ 3 cases	
 		fonction.BateauOrdi(grilleOrdi, 3) ;
-		//Choix des coordonnées pour le deuxième bateau à 3 cases	
+		//Choix des coordonnï¿½es pour le deuxiï¿½me bateau ï¿½ 3 cases	
 		fonction.BateauOrdi(grilleOrdi, 3) ;
-		//Choix des coordonnées pour le bateau à 2 cases
+		//Choix des coordonnï¿½es pour le bateau ï¿½ 2 cases
 		fonction.BateauOrdi(grilleOrdi, 2) ;
 		
 		}
