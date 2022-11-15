@@ -1,6 +1,8 @@
-/**
+package Vue; /**
  *  Auteurs : Gloria_Quentin_Hawa
  */
+
+import Modele.Methode;
 
 import java.io.* ;
 

@@ -1,4 +1,4 @@
-// Methode
+package Modele;// Modele.Methode
 
 import javax.swing.* ;
 import java.io.* ;

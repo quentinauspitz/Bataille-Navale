@@ -1,6 +1,10 @@
-
-// Menu
+package Controlleur;
+// Controlleur.Menu
 // Gloria, Quentin, Hawa
+import Modele.Methode;
+import Vue.Moyen;
+import Vue.Regles;
+
 import java.io.* ;
 
 public class Menu
@@ -28,7 +32,7 @@ public class Menu
 					System.out.println("================\n\n") ;
 					System.out.println("MENU\n") ;
 					System.out.println("1. Jouer contre l'ordinateur\n") ;
-					System.out.println("2. Regles\n") ;			
+					System.out.println("2. Vue.Regles\n") ;
 					System.out.println("3. Quitter le jeu\n\n") ;
 					System.out.println("Quel est votre choix ?") ;
 					menu = Integer.parseInt(in.readLine()) ;

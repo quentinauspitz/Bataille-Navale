@@ -1,11 +1,11 @@
-/*******************************************************************************************
+package Vue; /*******************************************************************************************
 
- Nom du programme	: Regles.java
+ Nom du programme	: Vue.Regles.java
  Auteur				: Zufferey Matthieu, 1hc
  Version			: 2.0			
  Date				: 10 mars 2002			
- Description		: Ce sont les règles du jeu bataille navale
- Préconditions		: Aucune
+ Description		: Ce sont les rï¿½gles du jeu bataille navale
+ Prï¿½conditions		: Aucune
  
 ********************************************************************************************/
 
