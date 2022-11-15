@@ -1,23 +1,13 @@
-/*******************************************************************************************
-
- Nom du programme	: Methode.java
- Auteur				: Zufferey Matthieu, 1hc	
- Version			: 2.0		
- Date				: 10 mars 2002			
- Description		: Ce sont les m�thodes utilis�es pour la bataille navale
- Pr�conditions		: Aucune
- 
-********************************************************************************************/
+// Methode
 
 import javax.swing.* ;
 import java.io.* ;
 
-//test glo
 public class Methode
 	{
 	public int Coordonnee(int a) throws IOException //1.longeur, 2.hauteur
 		{
-		//G�re l'entr�e en longueur ou en hauteur des bateaux
+		//Gere l'entree en longueur ou en hauteur des bateaux
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)) ;
 		
 		boolean erreur ;
@@ -48,7 +38,7 @@ public class Methode
 
 		}
 		
-	public int Ligne(int a) throws IOException // ligne de d�part
+	public int Ligne(int a) throws IOException // ligne de depart
 		{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)) ;
 		
@@ -65,7 +55,7 @@ public class Methode
 					System.out.println("\nEntrez la ligne de depart") ;
 					a = Integer.parseInt(in.readLine()) ;
 					}
-				while (a < 1 || a > 10) ;
+				while (a < 1 || a > 15) ;
 				}
 			catch (NumberFormatException e)
 				{
@@ -78,7 +68,7 @@ public class Methode
 		return a ;
 		}
 		
-	public int Colonne(int a) throws IOException // colonne de d�part
+	public int Colonne(int a) throws IOException // colonne de depart
 		{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)) ;
 		
@@ -95,11 +85,11 @@ public class Methode
 					System.out.println("\nEntrez la colonne de depart") ;
 					a = Integer.parseInt(in.readLine()) ;
 					}
-				while (a < 1 || a > 10) ;
+				while (a < 1 || a > 15) ;
 				}
 			catch (NumberFormatException e)
 				{
-				System.out.println("Veuillez entrer un entier entre 1 et 10\n");
+				System.out.println("Veuillez entrer un entier entre 1 et 15\n");
 				erreur = true ;	
 				}			
 			}
@@ -110,15 +100,15 @@ public class Methode
 		
 	public void FirstPrint(String a [][]) // Affiche la grille quand vous placez les bateaux
 		{
-		for (int i = 0 ; i < 11 ; i++)
+		for (int i = 0 ; i < 16 ; i++)
 			{
-				for (int j = 0 ; j < 11 ; j++)
+				for (int j = 0 ; j < 16 ; j++)
 					{
 					if (j == 0 && i == 0)
 						{
 						System.out.print("   ") ;
 						}
-					else if(j == 0 && i == 10)
+					else if(j == 0 && i == 15)
 						{
 							System.out.print(a[i][j] + " ") ;
 							}
@@ -139,11 +129,11 @@ public class Methode
 		}
 		
 			
-	public void SecondPrint(String a [][], String b [][]) // Affiche les deux grilles, cotes � cotes
+	public void SecondPrint(String a [][], String b [][]) // Affiche les deux grilles, cotes a cotes
 		{	
-		for (int i = 0 ; i < 11 ; i++)
+		for (int i = 0 ; i < 16 ; i++)
 			{
-			for (int j = 0 ; j < 11 ; j++)
+			for (int j = 0 ; j < 16 ; j++)
 				{
 				if (j == 0 && i == 0)
 					{
@@ -151,7 +141,7 @@ public class Methode
 					}
 				else 	
 					{
-						if (j == 0 && i == 10)
+						if (j == 0 && i == 15)
 							{
 							System.out.print(a[i][j] + " ") ;		
 							}
@@ -171,7 +161,7 @@ public class Methode
 		
 			System.out.print("         ") ;	
 			
-			for (int k = 0 ; k < 11 ; k++)
+			for (int k = 0 ; k < 16 ; k++)
 				{
 				if (i == 0 && k == 0)
 					{
@@ -179,7 +169,7 @@ public class Methode
 					}
 				else 	
 					{
-						if (k == 0 && i == 10)
+						if (k == 0 && i == 15)
 							{
 							System.out.print(b[i][k] + " ") ;		
 							}
@@ -267,7 +257,7 @@ public class Methode
 				
 					case 2 : 
 						{
-						if((ligne + nbre) > 11)
+						if((ligne + nbre) > 16)
 							{
 							erreur = 0 ;	
 							}
@@ -314,8 +304,8 @@ public class Methode
 		{
 			int i = 0 ;
 			int coordonnee = (int)(Math.random() * (2) + 1) ;
-			int ligne = (int)(Math.random() * (10) + 1) ;
-			int colonne = (int)(Math.random() * (10) + 1) ;
+			int ligne = (int)(Math.random() * (15) + 1) ;
+			int colonne = (int)(Math.random() * (15) + 1) ;
 		
 			erreur = 1 ;
 		
@@ -323,7 +313,7 @@ public class Methode
 				{
 					case 1 :
 						{
-						if((colonne + nbre) > 11)
+						if((colonne + nbre) > 16)
 							{
 							erreur = 0 ;	
 							}
@@ -359,7 +349,7 @@ public class Methode
 				
 					case 2 : 
 						{
-						if((ligne + nbre) > 11)
+						if((ligne + nbre) > 16)
 							{
 							erreur = 0 ;	
 							}
@@ -425,39 +415,41 @@ public class Methode
 		int [] tabBat3a = new int[6] ;
 		int [] tabBat3b = new int[6] ;
 		int [] tabBat2 = new int[4] ;
-		//Choix des coordonn�es pour le bateau � 5 cases	
-		
+
+
+		//Choix des coordonnees pour le bateau a 5 cases
+
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre bateau a 5 cases\n") ;
-		
-		fonction.FirstPrint(grille) ;	
-			
+
+		fonction.FirstPrint(grille) ;
+
 		fonction.Bateau(grille, 5) ;
-		
+
 		//Choix des coordonn�es pour le bateau � 4 cases
-					
+
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre bateau a 4 cases\n") ;
-		
+
 		fonction.FirstPrint(grille) ;
-		
+
 		fonction.Bateau(grille, 4) ;
-		
-		//Choix des coordonn�es pour le premier bateau � 3 cases			
+
+		//Choix des coordonn�es pour le premier bateau � 3 cases
 
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre 1er bateau a 3 cases\n") ;
-		
+
 		fonction.FirstPrint(grille) ;
-		
+
 		fonction.Bateau(grille, 3) ;
 
 		//Choix des coordonn�es pour le deuxi�me bateau � 3 cases
-		
+
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre 2 eme bateau a 3 cases\n") ;
-		
-		fonction.FirstPrint(grille) ;	
+
+		fonction.FirstPrint(grille) ;
 
 		fonction.Bateau(grille, 3) ;
 
@@ -465,31 +457,29 @@ public class Methode
 
 		System.out.println("\n\n\n\n\n" + vous.toUpperCase() + " : COMPLETEZ VOTRE GRILLE DE JEU\n") ;
 		System.out.println("Placer votre bateau a 2 cases\n") ;
-		
+
 		fonction.FirstPrint(grille) ;
-		
-		fonction.Bateau(grille, 2) ;	
-	
-		}	
-	
-	
+
+		fonction.Bateau(grille, 2) ;
+
+		}
+
+
 	public void Ordi(String [][] grilleOrdi) throws IOException
 		{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)) ;
-		
+
 		Methode fonction = new Methode() ;
-		
-		//Choix des coordonn�es pour le bateau � 5 cases	
+
+		//Choix des coordonnees pour le cuirasse
+		fonction.BateauOrdi(grilleOrdi, 7) ;
+		//Choix des coordonnees pour le croiseur
 		fonction.BateauOrdi(grilleOrdi, 5) ;
-		//Choix des coordonn�es pour le bateau � 4 cases	
-		fonction.BateauOrdi(grilleOrdi, 4) ;
-		//Choix des coordonn�es pour le premier bateau � 3 cases	
+		//Choix des coordonnees pour le destroyer
 		fonction.BateauOrdi(grilleOrdi, 3) ;
-		//Choix des coordonn�es pour le deuxi�me bateau � 3 cases	
-		fonction.BateauOrdi(grilleOrdi, 3) ;
-		//Choix des coordonn�es pour le bateau � 2 cases
-		fonction.BateauOrdi(grilleOrdi, 2) ;
-		
+		//Choix des coordonnees pour le sous-marin
+		fonction.BateauOrdi(grilleOrdi, 1) ;
+
 		}
 	public void Grille(int colonne, int ligne, String [][] grilleCachee) throws IOException
 		{
@@ -499,20 +489,20 @@ public class Methode
 					{
 						if(i == ligne-1 && colonne > 0)
 							{
-							System.out.print(grilleCachee[i][j]+ " ") ;	
+							System.out.print(grilleCachee[i][j]+ " ") ;
 							}
 						else if(i > 0 && j > 0 || j == (colonne-1))
 						     {
 							 System.out.print(grilleCachee[i][j]+ "  ") ;
 							 }
-							 else 
+							 else
 							 {
-							 System.out.print(grilleCachee[i][j]+ " ") ;	
+							 System.out.print(grilleCachee[i][j]+ " ") ;
 							 }
 					}
-				System.out.println() ;	
-				}	
+				System.out.println() ;
+				}
 
 
-		}		
+		}
 	}

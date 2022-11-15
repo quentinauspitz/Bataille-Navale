@@ -1,15 +1,6 @@
 
-/*******************************************************************************************
-
- Nom du programme	: Menu.java
- Auteur				: Zufferey Matthieu, 1hc
- Version 			: 2.0			
- Date				: 10 mars 2002			
- Description		: Menu de la bataille naval, fichier � ex�cuter 
- Pr�conditions		: Aucune
- 
-********************************************************************************************/
-
+// Menu
+// Gloria, Quentin, Hawa
 import java.io.* ;
 
 public class Menu
