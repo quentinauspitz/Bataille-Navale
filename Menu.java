@@ -44,11 +44,11 @@ public class Menu
 					}
 				catch (NumberFormatException e)
 					{
-					System.out.println("\nVeuillez entrer un entier entre 1 et 6\n");
+					System.out.println("\nVeuillez entrer un entier entre 1 et 3\n");
 					erreur = true ;	
 					}
 			}					
-			while (erreur != false && (menu < 1 || menu > 7)) ;
+			while (erreur != false && (menu < 1 || menu > 3)) ;
 			
 			
 			switch (menu) 
