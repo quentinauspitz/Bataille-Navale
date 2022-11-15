@@ -13,8 +13,6 @@ import java.util.List;
 
 public abstract class Joueur_Humain {
 
-    protected plateauModele plateauModele;
-
     /*
      * Recense les cases et leur type :
      * - 0 pour une case qu'on a pas encore visee
